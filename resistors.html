@@ -1,0 +1,121 @@
+<!-- Resistor Component Page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component - Resistor</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function sortMethods(criteria) {
+            let descending = false;
+            if (criteria === 'difficulty-hard') {
+                criteria = 'difficulty';
+                descending = true;
+            } else if (criteria === 'difficulty-easy') {
+                criteria = 'difficulty';
+            }
+            let methods = Array.from(document.querySelectorAll('.method'));
+            
+            methods.sort((a, b) => {
+                let aValue = a.getAttribute(`data-${criteria}`) || "";
+                let bValue = b.getAttribute(`data-${criteria}`) || "";
+                
+                return descending ? bValue.localeCompare(aValue, undefined, { numeric: true }) : aValue.localeCompare(bValue, undefined, { numeric: true });
+            });
+            
+            let container = document.getElementById('methods-container');
+            container.innerHTML = '';
+            methods.forEach(method => container.appendChild(method));
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Resistor</h1>
+    </header>
+    
+    <section>
+        <h2>Overview</h2>
+        <p>A resistor is a fundamental electronic component that limits the flow of electric current. It works by converting electrical energy into heat, using a material with controlled resistance. The resistance value determines how much the current is reduced according to Ohm's Law (V = IR), where voltage (V) equals current (I) times resistance (R).</p>
+        <h3>Usage</h3>
+        <p>Resistors are essential in nearly every electronic circuit and are used in various applications, including:</p>
+        <ul>
+            <li><strong>Current Limiting:</strong> Used in series with an LED to prevent excessive current from burning it out.</li>
+            <li><strong>Voltage Division:</strong> Used in voltage divider circuits to step down voltage levels.</li>
+            <li><strong>Pull-up and Pull-down Resistors:</strong> Used in microcontroller circuits to ensure a stable voltage level on input pins.</li>
+            <li><strong>Signal Conditioning:</strong> Used in audio circuits to filter signals or adjust impedance.</li>
+            <li><strong>Heat Generation:</strong> Used in heating elements where electrical resistance is converted into thermal energy.</li>
+        </ul>
+    </section>
+    
+    <section>
+        <h2>Core Principles</h2>
+        <p>A resistor limits electric current by providing a controlled amount of resistance. The resistance (measured in ohms, Ω) depends on the material's resistivity, length, and cross-sectional area, following the equation:</p>
+        <p><strong>R = ρ (L / A)</strong></p>
+        <p>where:</p>
+        <ul>
+            <li><strong>R:</strong> Resistance (Ω)</li>
+            <li><strong>ρ:</strong> Resistivity of the material (Ω·m)</li>
+            <li><strong>L:</strong> Length of the resistive material (m)</li>
+            <li><strong>A:</strong> Cross-sectional area (m²)</li>
+        </ul>
+        <p>By adjusting these parameters, we can control the resistor's value and its effect on a circuit.</p>
+    </section>
+    
+    <section>
+        <h2>General Approach</h2>
+        <p>Regardless of the synthesis method, resistors share common design principles:</p>
+        <ul>
+            <li><strong>Resistive Material:</strong> Choose a material that opposes current flow, such as graphite, nichrome wire, or carbon film.</li>
+            <li><strong>Control Resistance:</strong> Adjust length, thickness, or shape to fine-tune resistance.</li>
+            <li><strong>Electrical Contacts:</strong> Ensure proper connections using metal leads or wire terminations.</li>
+            <li><strong>Durability:</strong> Protect the resistor with an insulating coating to prevent degradation.</li>
+        </ul>
+        <p>Each manufacturing method applies these principles in different ways to achieve a reliable resistor.</p>
+    </section>
+    
+    <section>
+        <h2>Manufacturing Methods</h2>
+        
+        <label for="sort">Sort by:</label>
+        <select id="sort" onchange="sortMethods(this.value)">
+            <option value="difficulty-easy">Difficulty (Easiest First)</option>
+            <option value="difficulty-hard">Difficulty (Hardest First)</option>
+        </select>
+        
+        <div id="methods-container">
+            <article class="method" data-difficulty="1">
+                <h3>Graphite and Paper Resistor</h3>
+                <div id="markmap-container-method1"></div>
+                <h4>Synthesis Diagram</h4>
+                <div id="markmap-materials-method1"></div>
+                <h4>Process</h4>
+                <p>Draw a thick line of graphite (pencil lead) on a piece of paper. Attach wires to each end using conductive clips. The thickness and length of the line determine resistance.</p>
+            </article>
+
+            <article class="method" data-difficulty="2">
+                <h3>Wire-Wound Resistor</h3>
+                <div id="markmap-container-method2"></div>
+                <h4>Synthesis Diagram</h4>
+                <div id="markmap-materials-method2"></div>
+                <h4>Process</h4>
+                <p>Wrap nichrome or other resistive wire around a non-conductive core like ceramic. Secure the wire in place and connect leads at both ends.</p>
+            </article>
+
+            <article class="method" data-difficulty="3">
+                <h3>Carbon Film Resistor</h3>
+                <div id="markmap-container-method3"></div>
+                <h4>Synthesis Diagram</h4>
+                <div id="markmap-materials-method3"></div>
+                <h4>Process</h4>
+                <p>A thin carbon layer is deposited onto a ceramic rod. By adjusting the thickness and shape of the carbon film, the resistance value can be controlled.</p>
+            </article>
+        </div>
+    </section>
+    
+    <footer>
+        <a href="index.html">Back to Main Navigation</a>
+    </footer>
+</body>
+</html>

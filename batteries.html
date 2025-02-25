@@ -1,0 +1,110 @@
+<!-- Battery Component Page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component - Battery</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function sortMethods(criteria) {
+            let descending = false;
+            if (criteria === 'difficulty-hard') {
+                criteria = 'difficulty';
+                descending = true;
+            } else if (criteria === 'difficulty-easy') {
+                criteria = 'difficulty';
+            }
+            let methods = Array.from(document.querySelectorAll('.method'));
+            
+            methods.sort((a, b) => {
+                let aValue = a.getAttribute(`data-${criteria}`) || "";
+                let bValue = b.getAttribute(`data-${criteria}`) || "";
+                
+                return descending ? bValue.localeCompare(aValue, undefined, { numeric: true }) : aValue.localeCompare(bValue, undefined, { numeric: true });
+            });
+            
+            let container = document.getElementById('methods-container');
+            container.innerHTML = '';
+            methods.forEach(method => container.appendChild(method));
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Battery</h1>
+    </header>
+    
+    <section>
+        <h2>Overview</h2>
+        <p>A battery is an electrochemical device that stores and releases electrical energy by converting chemical energy into electrical energy through a redox reaction.</p>
+        <h3>Usage</h3>
+        <p>Batteries are used in a variety of applications, including:</p>
+        <ul>
+            <li><strong>Portable Power:</strong> Used in electronics like phones, flashlights, and remote controls.</li>
+            <li><strong>Energy Storage:</strong> Used in renewable energy systems to store excess power.</li>
+            <li><strong>Automotive Applications:</strong> Used to start engines and power vehicle electronics.</li>
+            <li><strong>Backup Power:</strong> Used in uninterruptible power supplies (UPS) for critical systems.</li>
+        </ul>
+    </section>
+    
+    <section>
+        <h2>Core Principles</h2>
+        <p>A battery functions by facilitating an electrochemical reaction between two electrodes, separated by an electrolyte. The key equation governing battery function is:</p>
+        <p><strong>Voltage = Reduction Potential (Cathode) - Reduction Potential (Anode)</strong></p>
+        <p>where:</p>
+        <ul>
+            <li><strong>Cathode:</strong> The positive electrode where reduction occurs.</li>
+            <li><strong>Anode:</strong> The negative electrode where oxidation occurs.</li>
+            <li><strong>Electrolyte:</strong> A medium allowing ionic movement between electrodes.</li>
+        </ul>
+        <p>The efficiency of a battery depends on the choice of materials and the electrochemical reaction.</p>
+    </section>
+    
+    <section>
+        <h2>General Approach</h2>
+        <p>The process of making a battery involves:</p>
+        <ul>
+            <li><strong>Choosing Electrodes:</strong> Common materials include zinc, copper, lead, or lithium-based compounds.</li>
+            <li><strong>Selecting an Electrolyte:</strong> Can be a liquid (sulfuric acid, saltwater) or a solid polymer.</li>
+            <li><strong>Separating Electrodes:</strong> A non-conductive separator prevents short circuits while allowing ion flow.</li>
+            <li><strong>Encapsulation:</strong> The battery must be enclosed to prevent leaks and ensure stability.</li>
+        </ul>
+        <p>Different synthesis methods follow these fundamental principles but vary in complexity and efficiency.</p>
+    </section>
+    
+    <section>
+        <h2>Manufacturing Methods</h2>
+        
+        <label for="sort">Sort by:</label>
+        <select id="sort" onchange="sortMethods(this.value)">
+            <option value="difficulty-easy">Difficulty (Easiest First)</option>
+            <option value="difficulty-hard">Difficulty (Hardest First)</option>
+        </select>
+        
+        <div id="methods-container">
+            <article class="method" data-difficulty="1">
+                <h3>Saltwater Battery</h3>
+                <div id="markmap-container-method1"></div>
+                <h4>Synthesis Diagram</h4>
+                <div id="markmap-materials-method1"></div>
+                <h4>Process</h4>
+                <p>Use copper and zinc electrodes in a saltwater solution to generate a small voltage.</p>
+            </article>
+
+            <article class="method" data-difficulty="2">
+                <h3>Lead-Acid Battery</h3>
+                <div id="markmap-container-method2"></div>
+                <h4>Synthesis Diagram</h4>
+                <div id="markmap-materials-method2"></div>
+                <h4>Process</h4>
+                <p>Use lead and lead dioxide plates in a sulfuric acid electrolyte to store and release energy.</p>
+            </article>
+        </div>
+    </section>
+    
+    <footer>
+        <a href="index.html">Back to Main Navigation</a>
+    </footer>
+</body>
+</html>

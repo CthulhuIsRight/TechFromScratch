@@ -1,0 +1,111 @@
+<!-- Capacitor Component Page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component - Capacitor</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function sortMethods(criteria) {
+            let descending = false;
+            if (criteria === 'difficulty-hard') {
+                criteria = 'difficulty';
+                descending = true;
+            } else if (criteria === 'difficulty-easy') {
+                criteria = 'difficulty';
+            }
+            let methods = Array.from(document.querySelectorAll('.method'));
+            
+            methods.sort((a, b) => {
+                let aValue = a.getAttribute(`data-${criteria}`) || "";
+                let bValue = b.getAttribute(`data-${criteria}`) || "";
+                
+                return descending ? bValue.localeCompare(aValue, undefined, { numeric: true }) : aValue.localeCompare(bValue, undefined, { numeric: true });
+            });
+            
+            let container = document.getElementById('methods-container');
+            container.innerHTML = '';
+            methods.forEach(method => container.appendChild(method));
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Capacitor</h1>
+    </header>
+    
+    <section>
+        <h2>Overview</h2>
+        <p>A capacitor is an electronic component that stores and releases electrical energy. It consists of two conductive plates separated by an insulating material called a dielectric.</p>
+        <h3>Usage</h3>
+        <p>Capacitors are used in a variety of applications, including:</p>
+        <ul>
+            <li><strong>Energy Storage:</strong> Used in power supplies to smooth out voltage fluctuations.</li>
+            <li><strong>Signal Filtering:</strong> Used in audio circuits to remove noise.</li>
+            <li><strong>Timing Circuits:</strong> Used in combination with resistors to create oscillators and timers.</li>
+            <li><strong>Coupling and Decoupling:</strong> Used to block DC while allowing AC signals to pass.</li>
+        </ul>
+    </section>
+    
+    <section>
+        <h2>Core Principles</h2>
+        <p>A capacitor functions by storing electric charge between two conductive plates. The capacitance value is determined by the equation:</p>
+        <p><strong>C = ε (A / d)</strong></p>
+        <p>where:</p>
+        <ul>
+            <li><strong>C:</strong> Capacitance (Farads)</li>
+            <li><strong>ε:</strong> Permittivity of the dielectric material</li>
+            <li><strong>A:</strong> Area of the conductive plates</li>
+            <li><strong>d:</strong> Distance between the plates</li>
+        </ul>
+        <p>By altering these factors, capacitance can be increased or decreased to suit different applications.</p>
+    </section>
+    
+    <section>
+        <h2>General Approach</h2>
+        <p>The process of making a capacitor involves:</p>
+        <ul>
+            <li><strong>Choosing Conductive Plates:</strong> Common materials include aluminum foil, copper, or graphite.</li>
+            <li><strong>Selecting a Dielectric:</strong> Insulating materials such as paper, ceramic, plastic, or electrolytic paste.</li>
+            <li><strong>Assembling the Structure:</strong> Placing the dielectric between the conductive plates.</li>
+            <li><strong>Ensuring Electrical Contacts:</strong> Attaching leads for circuit integration.</li>
+        </ul>
+        <p>Each synthesis method follows this basic structure but varies in materials and precision.</p>
+    </section>
+    
+    <section>
+        <h2>Manufacturing Methods</h2>
+        
+        <label for="sort">Sort by:</label>
+        <select id="sort" onchange="sortMethods(this.value)">
+            <option value="difficulty-easy">Difficulty (Easiest First)</option>
+            <option value="difficulty-hard">Difficulty (Hardest First)</option>
+        </select>
+        
+        <div id="methods-container">
+            <article class="method" data-difficulty="1">
+                <h3>Aluminum Foil and Paper Capacitor</h3>
+                <div id="markmap-container-method1"></div>
+                <h4>Synthesis Diagram</h4>
+                <div id="markmap-materials-method1"></div>
+                <h4>Process</h4>
+                <p>Layer aluminum foil with wax paper as a dielectric. Roll the layers together and attach leads.</p>
+            </article>
+
+            <article class="method" data-difficulty="2">
+                <h3>Ceramic Capacitor</h3>
+                <div id="markmap-container-method2"></div>
+                <h4>Synthesis Diagram</h4>
+                <div id="markmap-materials-method2"></div>
+                <h4>Process</h4>
+                <p>Use a ceramic disc coated with conductive layers as the dielectric and attach leads.</p>
+            </article>
+        </div>
+    </section>
+    
+    <footer>
+        <a href="index.html">Back to Main Navigation</a>
+    </footer>
+</body>
+</html>
