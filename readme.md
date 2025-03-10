@@ -13,7 +13,7 @@ Each component page includes:
 - General approach to making the component.
 - Detailed manufacturing methods with sorting options based on difficulty.
 
-##Plans
+## Plans
 
 - Update node graph to have dark background, while having the text still be legible
 - Dark mode for component webpages is a must
