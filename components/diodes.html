@@ -1,10 +1,10 @@
-<!-- Transistor Component Page -->
+<!-- Diode Component Page -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Component - Transistor</title>
+    <title>Component - Diode</title>
     <link rel="stylesheet" href="styles.css">
     <script>
         function sortMethods(criteria) {
@@ -32,45 +32,47 @@
 </head>
 <body>
     <header>
-        <h1>Transistor</h1>
+        <h1>Diode</h1>
     </header>
     
     <section>
         <h2>Overview</h2>
-        <p>A transistor is a semiconductor device used to amplify or switch electronic signals. It consists of three layers of semiconductor material, forming either an NPN or PNP junction.</p>
+        <p>A diode is a semiconductor device that allows current to flow in one direction while blocking it in the opposite direction. It consists of a p-n junction that enables rectification.</p>
         <h3>Usage</h3>
-        <p>Transistors are used in a wide range of applications, including:</p>
+        <p>Diodes are used in various electronic applications, including:</p>
         <ul>
-            <li><strong>Amplification:</strong> Increasing the power of a signal in audio and radio circuits.</li>
-            <li><strong>Switching:</strong> Acting as an electronic switch in digital circuits.</li>
-            <li><strong>Oscillators:</strong> Generating signals in radio transmitters and clocks.</li>
-            <li><strong>Signal Modulation:</strong> Used in communication systems.</li>
+            <li><strong>Rectification:</strong> Converting AC to DC in power supplies.</li>
+            <li><strong>Signal Demodulation:</strong> Extracting signals in radio receivers.</li>
+            <li><strong>Voltage Regulation:</strong> Used in Zener diodes to maintain stable voltages.</li>
+            <li><strong>Protection:</strong> Preventing reverse current flow in circuits.</li>
         </ul>
     </section>
     
     <section>
         <h2>Core Principles</h2>
-        <p>A transistor operates by controlling the flow of current between two terminals using a third terminal. The fundamental equation governing transistor operation is:</p>
-        <p><strong>I_C = β * I_B</strong></p>
+        <p>A diode operates based on the p-n junction, which allows current flow when forward-biased and blocks current when reverse-biased. The basic equation governing diode behavior is:</p>
+        <p><strong>I = I₀ (e^(V / ηVT) - 1)</strong></p>
         <p>where:</p>
         <ul>
-            <li><strong>I_C:</strong> Collector current</li>
-            <li><strong>β:</strong> Current gain of the transistor</li>
-            <li><strong>I_B:</strong> Base current</li>
+            <li><strong>I:</strong> Current through the diode</li>
+            <li><strong>I₀:</strong> Reverse saturation current</li>
+            <li><strong>V:</strong> Applied voltage</li>
+            <li><strong>η:</strong> Ideality factor (typically between 1 and 2)</li>
+            <li><strong>VT:</strong> Thermal voltage (~25mV at room temperature)</li>
         </ul>
-        <p>By varying the base current, the transistor can regulate a much larger current between the collector and emitter.</p>
+        <p>By choosing appropriate semiconductor materials and doping levels, diodes can be optimized for different applications.</p>
     </section>
     
     <section>
         <h2>General Approach</h2>
-        <p>The process of making a transistor involves:</p>
+        <p>The process of making a diode involves:</p>
         <ul>
-            <li><strong>Selecting Semiconductor Material:</strong> Typically silicon or germanium.</li>
-            <li><strong>Creating P-N Junctions:</strong> Using controlled doping processes to form NPN or PNP structures.</li>
-            <li><strong>Adding Metal Contacts:</strong> Attaching leads for the base, collector, and emitter.</li>
-            <li><strong>Encapsulation:</strong> Protecting the transistor from environmental damage.</li>
+            <li><strong>Selecting Semiconductor Material:</strong> Common choices include silicon and germanium.</li>
+            <li><strong>Creating a P-N Junction:</strong> Doping one side with a p-type impurity and the other with an n-type impurity.</li>
+            <li><strong>Forming Contacts:</strong> Attaching metal leads to both ends for electrical connections.</li>
+            <li><strong>Encapsulation:</strong> Protecting the diode from environmental factors with a glass or plastic case.</li>
         </ul>
-        <p>Each synthesis method applies these principles but varies in complexity.</p>
+        <p>Each synthesis method applies these principles but varies in materials and complexity.</p>
     </section>
     
     <section>
@@ -84,27 +86,27 @@
         
         <div id="methods-container">
             <article class="method" data-difficulty="1">
-                <h3>Point-Contact Transistor</h3>
+                <h3>Copper Oxide Diode</h3>
                 <div id="markmap-container-method1"></div>
                 <h4>Synthesis Diagram</h4>
                 <div id="markmap-materials-method1"></div>
                 <h4>Process</h4>
-                <p>Use a germanium wafer with metal contacts to form a basic transistor with point-contact junctions.</p>
+                <p>Heat a copper plate to form a thin copper oxide layer, then attach electrical contacts.</p>
             </article>
 
             <article class="method" data-difficulty="2">
-                <h3>Silicon Junction Transistor</h3>
+                <h3>Silicon Junction Diode</h3>
                 <div id="markmap-container-method2"></div>
                 <h4>Synthesis Diagram</h4>
                 <div id="markmap-materials-method2"></div>
                 <h4>Process</h4>
-                <p>Use silicon wafer doping techniques to form NPN or PNP junctions and add metal contacts.</p>
+                <p>Doping a silicon wafer with p-type and n-type impurities to create a junction and adding metal contacts.</p>
             </article>
         </div>
     </section>
     
     <footer>
-        <a href="index.html">Back to Main Navigation</a>
+        <a href="../index.html">Back to Main Navigation</a>
     </footer>
 </body>
 </html>

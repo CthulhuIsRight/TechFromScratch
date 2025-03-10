@@ -1,10 +1,10 @@
-<!-- Battery Component Page -->
+<!-- Inductor Component Page -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Component - Battery</title>
+    <title>Component - Inductor</title>
     <link rel="stylesheet" href="styles.css">
     <script>
         function sortMethods(criteria) {
@@ -32,45 +32,47 @@
 </head>
 <body>
     <header>
-        <h1>Battery</h1>
+        <h1>Inductor</h1>
     </header>
     
     <section>
         <h2>Overview</h2>
-        <p>A battery is an electrochemical device that stores and releases electrical energy by converting chemical energy into electrical energy through a redox reaction.</p>
+        <p>An inductor is a passive electrical component that stores energy in a magnetic field when electrical current flows through it. It consists of a coil of wire wound around a core, typically air, ferrite, or iron.</p>
         <h3>Usage</h3>
-        <p>Batteries are used in a variety of applications, including:</p>
+        <p>Inductors are used in various applications, including:</p>
         <ul>
-            <li><strong>Portable Power:</strong> Used in electronics like phones, flashlights, and remote controls.</li>
-            <li><strong>Energy Storage:</strong> Used in renewable energy systems to store excess power.</li>
-            <li><strong>Automotive Applications:</strong> Used to start engines and power vehicle electronics.</li>
-            <li><strong>Backup Power:</strong> Used in uninterruptible power supplies (UPS) for critical systems.</li>
+            <li><strong>Energy Storage:</strong> Used in power supplies to store and release energy efficiently.</li>
+            <li><strong>Filters:</strong> Used in analog circuits to filter signals by blocking high-frequency noise.</li>
+            <li><strong>Transformers:</strong> Used in voltage conversion applications.</li>
+            <li><strong>Inductive Sensing:</strong> Used in proximity sensors and metal detectors.</li>
         </ul>
     </section>
     
     <section>
         <h2>Core Principles</h2>
-        <p>A battery functions by facilitating an electrochemical reaction between two electrodes, separated by an electrolyte. The key equation governing battery function is:</p>
-        <p><strong>Voltage = Reduction Potential (Cathode) - Reduction Potential (Anode)</strong></p>
+        <p>An inductor operates by resisting changes in current through electromagnetic induction. The inductance value is determined by the equation:</p>
+        <p><strong>L = (N² * μ * A) / l</strong></p>
         <p>where:</p>
         <ul>
-            <li><strong>Cathode:</strong> The positive electrode where reduction occurs.</li>
-            <li><strong>Anode:</strong> The negative electrode where oxidation occurs.</li>
-            <li><strong>Electrolyte:</strong> A medium allowing ionic movement between electrodes.</li>
+            <li><strong>L:</strong> Inductance (Henries)</li>
+            <li><strong>N:</strong> Number of turns of the coil</li>
+            <li><strong>μ:</strong> Permeability of the core material</li>
+            <li><strong>A:</strong> Cross-sectional area of the coil</li>
+            <li><strong>l:</strong> Length of the coil</li>
         </ul>
-        <p>The efficiency of a battery depends on the choice of materials and the electrochemical reaction.</p>
+        <p>By adjusting these parameters, inductance can be increased or decreased to meet design requirements.</p>
     </section>
     
     <section>
         <h2>General Approach</h2>
-        <p>The process of making a battery involves:</p>
+        <p>The process of making an inductor involves:</p>
         <ul>
-            <li><strong>Choosing Electrodes:</strong> Common materials include zinc, copper, lead, or lithium-based compounds.</li>
-            <li><strong>Selecting an Electrolyte:</strong> Can be a liquid (sulfuric acid, saltwater) or a solid polymer.</li>
-            <li><strong>Separating Electrodes:</strong> A non-conductive separator prevents short circuits while allowing ion flow.</li>
-            <li><strong>Encapsulation:</strong> The battery must be enclosed to prevent leaks and ensure stability.</li>
+            <li><strong>Choosing a Core:</strong> Selecting air, ferrite, or iron to influence inductance.</li>
+            <li><strong>Winding the Coil:</strong> Wrapping insulated copper wire around the core.</li>
+            <li><strong>Ensuring Proper Connections:</strong> Attaching leads or terminals for circuit integration.</li>
+            <li><strong>Stability and Protection:</strong> Coating or enclosing the inductor to prevent environmental damage.</li>
         </ul>
-        <p>Different synthesis methods follow these fundamental principles but vary in complexity and efficiency.</p>
+        <p>Each synthesis method follows these fundamental principles but varies in complexity and efficiency.</p>
     </section>
     
     <section>
@@ -84,27 +86,27 @@
         
         <div id="methods-container">
             <article class="method" data-difficulty="1">
-                <h3>Saltwater Battery</h3>
+                <h3>Air-Core Inductor</h3>
                 <div id="markmap-container-method1"></div>
                 <h4>Synthesis Diagram</h4>
                 <div id="markmap-materials-method1"></div>
                 <h4>Process</h4>
-                <p>Use copper and zinc electrodes in a saltwater solution to generate a small voltage.</p>
+                <p>Wind copper wire around a cylindrical non-magnetic form to create an inductor without a core.</p>
             </article>
 
             <article class="method" data-difficulty="2">
-                <h3>Lead-Acid Battery</h3>
+                <h3>Ferrite-Core Inductor</h3>
                 <div id="markmap-container-method2"></div>
                 <h4>Synthesis Diagram</h4>
                 <div id="markmap-materials-method2"></div>
                 <h4>Process</h4>
-                <p>Use lead and lead dioxide plates in a sulfuric acid electrolyte to store and release energy.</p>
+                <p>Wrap copper wire around a ferrite core to increase inductance and reduce energy losses.</p>
             </article>
         </div>
     </section>
     
     <footer>
-        <a href="index.html">Back to Main Navigation</a>
+        <a href="../index.html">Back to Main Navigation</a>
     </footer>
 </body>
 </html>
