@@ -17,6 +17,7 @@ Each component page includes:
 
 - Update node graph to have dark background, while having the text still be legible
 - Dark mode for component webpages is a must
+- Set up a GitHub Pages site with Jekyll once basic functionality for website is down
 - Get the functional approach down for each component webpage, and once it works, then make it pretty with CSS/JS
 - I've found that there is some pretty detailed guides on synthsizing components, so instead of having the recipies on my site, I plan to have a summary of what is done in the recpies, and a portal link window to the website if the end user is interested
 - For each synthesis method, I plan to have a embeded node graph in a window alongside that recepie to help the end user more easily visualize synthesis of components
