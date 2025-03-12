@@ -1,121 +1,94 @@
-<!-- Resistor Component Page -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Component - Resistor</title>
-    <link rel="stylesheet" href="styles.css">
-    <script>
-        function sortMethods(criteria) {
-            let descending = false;
-            if (criteria === 'difficulty-hard') {
-                criteria = 'difficulty';
-                descending = true;
-            } else if (criteria === 'difficulty-easy') {
-                criteria = 'difficulty';
-            }
-            let methods = Array.from(document.querySelectorAll('.method'));
-            
-            methods.sort((a, b) => {
-                let aValue = a.getAttribute(`data-${criteria}`) || "";
-                let bValue = b.getAttribute(`data-${criteria}`) || "";
-                
-                return descending ? bValue.localeCompare(aValue, undefined, { numeric: true }) : aValue.localeCompare(bValue, undefined, { numeric: true });
-            });
-            
-            let container = document.getElementById('methods-container');
-            container.innerHTML = '';
-            methods.forEach(method => container.appendChild(method));
-        }
-    </script>
-</head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Component - Resistor</title>
 <body>
-    <header>
-        <h1>Resistor</h1>
-    </header>
-    
-    <section>
-        <h2>Overview</h2>
-        <p>A resistor is a fundamental electronic component that limits the flow of electric current. It works by converting electrical energy into heat, using a material with controlled resistance. The resistance value determines how much the current is reduced according to Ohm's Law (V = IR), where voltage (V) equals current (I) times resistance (R).</p>
-        <h3>Usage</h3>
-        <p>Resistors are essential in nearly every electronic circuit and are used in various applications, including:</p>
-        <ul>
-            <li><strong>Current Limiting:</strong> Used in series with an LED to prevent excessive current from burning it out.</li>
-            <li><strong>Voltage Division:</strong> Used in voltage divider circuits to step down voltage levels.</li>
-            <li><strong>Pull-up and Pull-down Resistors:</strong> Used in microcontroller circuits to ensure a stable voltage level on input pins.</li>
-            <li><strong>Signal Conditioning:</strong> Used in audio circuits to filter signals or adjust impedance.</li>
-            <li><strong>Heat Generation:</strong> Used in heating elements where electrical resistance is converted into thermal energy.</li>
-        </ul>
-    </section>
-    
-    <section>
-        <h2>Core Principles</h2>
-        <p>A resistor limits electric current by providing a controlled amount of resistance. The resistance (measured in ohms, Ω) depends on the material's resistivity, length, and cross-sectional area, following the equation:</p>
-        <p><strong>R = ρ (L / A)</strong></p>
-        <p>where:</p>
-        <ul>
-            <li><strong>R:</strong> Resistance (Ω)</li>
-            <li><strong>ρ:</strong> Resistivity of the material (Ω·m)</li>
-            <li><strong>L:</strong> Length of the resistive material (m)</li>
-            <li><strong>A:</strong> Cross-sectional area (m²)</li>
-        </ul>
-        <p>By adjusting these parameters, we can control the resistor's value and its effect on a circuit.</p>
-    </section>
-    
-    <section>
-        <h2>General Approach</h2>
-        <p>Regardless of the synthesis method, resistors share common design principles:</p>
-        <ul>
-            <li><strong>Resistive Material:</strong> Choose a material that opposes current flow, such as graphite, nichrome wire, or carbon film.</li>
-            <li><strong>Control Resistance:</strong> Adjust length, thickness, or shape to fine-tune resistance.</li>
-            <li><strong>Electrical Contacts:</strong> Ensure proper connections using metal leads or wire terminations.</li>
-            <li><strong>Durability:</strong> Protect the resistor with an insulating coating to prevent degradation.</li>
-        </ul>
-        <p>Each manufacturing method applies these principles in different ways to achieve a reliable resistor.</p>
-    </section>
-    
-    <section>
-        <h2>Manufacturing Methods</h2>
-        
-        <label for="sort">Sort by:</label>
-        <select id="sort" onchange="sortMethods(this.value)">
-            <option value="difficulty-easy">Difficulty (Easiest First)</option>
-            <option value="difficulty-hard">Difficulty (Hardest First)</option>
-        </select>
-        
-        <div id="methods-container">
-            <article class="method" data-difficulty="1">
-                <h3>Graphite and Paper Resistor</h3>
-                <div id="markmap-container-method1"></div>
-                <h4>Synthesis Diagram</h4>
-                <div id="markmap-materials-method1"></div>
-                <h4>Process</h4>
-                <p>Draw a thick line of graphite (pencil lead) on a piece of paper. Attach wires to each end using conductive clips. The thickness and length of the line determine resistance.</p>
-            </article>
-
-            <article class="method" data-difficulty="2">
-                <h3>Wire-Wound Resistor</h3>
-                <div id="markmap-container-method2"></div>
-                <h4>Synthesis Diagram</h4>
-                <div id="markmap-materials-method2"></div>
-                <h4>Process</h4>
-                <p>Wrap nichrome or other resistive wire around a non-conductive core like ceramic. Secure the wire in place and connect leads at both ends.</p>
-            </article>
-
-            <article class="method" data-difficulty="3">
-                <h3>Carbon Film Resistor</h3>
-                <div id="markmap-container-method3"></div>
-                <h4>Synthesis Diagram</h4>
-                <div id="markmap-materials-method3"></div>
-                <h4>Process</h4>
-                <p>A thin carbon layer is deposited onto a ceramic rod. By adjusting the thickness and shape of the carbon film, the resistance value can be controlled.</p>
-            </article>
-        </div>
-    </section>
-    
-    <footer>
-        <a href="https://cthulhuisright.github.io/TechFromScratch/index.html">Back to Main Navigation</a>
-    </footer>
+ <header>
+ <h1>Resistor</h1>
+ </header>
+ <section>
+ <h2>Overview</h2>
+ <p>A resistor is a fundamental electronic component that limits the flow of electric current. It works by converting electrical energy into heat, using a material with controlled resistance. The resistance value determines how much the current is reduced according to Ohm's Law (V = IR), where voltage (V) equals current (I) times resistance (R).</p>
+ <h3>Usage</h3>
+ <p>Resistors are essential in nearly every electronic circuit and are used in various applications, including:</p>
+ <ul>
+ <li><strong>Current Limiting:</strong> Used in series with an LED to prevent excessive current from burning it out.</li>
+ <li><strong>Voltage Division:</strong> Used in voltage divider circuits to step down voltage levels.</li>
+ <li><strong>Pull-up and Pull-down Resistors:</strong> Used in microcontroller circuits to ensure a stable voltage level on input pins.</li>
+ <li><strong>Signal Conditioning:</strong> Used in audio circuits to filter signals or adjust impedance.</li>
+ <li><strong>Heat Generation:</strong> Used in heating elements where electrical resistance is converted into thermal energy.</li>
+ </ul>
+ </section>
+ <section>
+ <h2>Core Principles</h2>
+ <p>A resistor limits electric current by providing a controlled amount of resistance. The resistance (measured in ohms, Ω) depends on the material's resistivity, length, and cross-sectional area, following the equation:</p>
+ <p><strong>R = ρ (L / A)</strong></p>
+ <p>where:</p>
+ <ul>
+ <li><strong>R:</strong> Resistance (Ω)</li>
+ <li><strong>ρ:</strong> Resistivity of the material (Ω·m)</li>
+ <li><strong>L:</strong> Length of the resistive material (m)</li>
+ <li><strong>A:</strong> Cross-sectional area (m²)</li>
+ </ul>
+ <p>By adjusting these parameters, we can control the resistor's value and its effect on a circuit.</p>
+ </section>
+ <section>
+ <h2>DIY Guides</h2>
+ <p>Here are some DIY guides for creating resistors at home:</p>
+ <h4><a href="https://hackaday.com/2018/07/21/wire-wound-resistors-on-your-own/">Wire Wound Resistors On Your Own (Hackaday)</a></h4>
+ <p>Learn how to create wire-wound resistors using nichrome wire, addressing challenges like inductance and capacitance while exploring Ayrton-Perry winding solutions.</p>
+ <h4><a href="https://www.sciencing.com/homemade-resistors-5862887/">Homemade Resistors (Sciencing)</a></h4>
+ <p>An introduction to resistor construction using carbon and metal wires, covering wire-wound resistors, material choices, and resistance calculations.</p>
+ <h4><a href="https://electronics.stackexchange.com/questions/593307/easiest-way-to-make-a-resistor">Easiest Way to Make a Resistor (Stack Exchange)</a></h4>
+ <p>A discussion on DIY resistor methods, featuring graphite pencil resistors, saltwater resistors, and tips on testing resistance with a multimeter.</p>
+ <h4><a href="https://makecode.adafruit.com/learnsystem/pins-tutorial/devices/make-a-resistor">Make a Graphite Resistor (Adafruit)</a></h4>
+ <p>A hands-on guide to making a graphite resistor on paper using a #2 pencil, with instructions on measuring and adjusting resistance for real-world applications.</p>
+ <h4><a href="https://www.quora.com/How-do-I-make-a-resistor-at-home">How Do I Make a Resistor at Home? (Quora)</a></h4>
+ <p>A QA-style guide covering graphite, wire, and bifilar-wound resistors, with insights on choosing materials and achieving precise resistance values.</p>
+ </section>
+<section>
+ <h2>Patents</h2>
+ <h3>Fixed Resistors</h3>
+ <h4><a href="https://patentimages.storage.googleapis.com/3e/cc/2b/9f795e5f819f6f/US3676925.pdf">Carbon Composition Resistor</a></h4>
+ <p>Made from a mixture of carbon particles and a binding agent. Known for durability but lower precision.</p>
+ <h4><a href="https://patentimages.storage.googleapis.com/47/e5/bf/623c2442e84ebe/US3342752.pdf">Carbon Film Resistor</a></h4>
+ <p>A thin layer of carbon deposited onto a ceramic substrate, offering better precision than carbon composition types.</p>
+ <h4><a href="https://patentimages.storage.googleapis.com/3f/f1/88/81a683eef4e691/US3148129.pdf">Metal Film Resistor</a></h4>
+ <p>Uses a thin metal layer for higher accuracy and stability in electronic circuits.</p>
+ <h4><a href="https://patentimages.storage.googleapis.com/89/a4/da/93c8eb0c488503/US2829226.pdf">Wire Wound Resistor</a></h4>
+ <p>Resistive wire wound around a ceramic or fiberglass core, providing high precision and power-handling capacity.</p>
+ <h4><a href="https://patentimages.storage.googleapis.com/78/5b/e5/36e77714d96bf0/US5966067.pdf">Thick Film Resistor</a></h4>
+ <p>Constructed using a resistive paste applied to a ceramic base, offering a balance between cost, precision, and stability.</p>
+ <h4><a href="https://patentimages.storage.googleapis.com/80/bf/b3/9f7d61850b2e12/US20120306611A1.pdf">Thin Film Resistor</a></h4>
+ <p>Employs a thin resistive layer on an insulating substrate, providing high precision and temperature stability.</p>
+ <h4><a href="https://patentimages.storage.googleapis.com/ba/fb/f9/63aac74583973d/EP0641144A1.pdf">Metal Oxide Film Resistor</a></h4>
+ <p>Utilizes a metal oxide film to improve temperature stability and resistance to environmental degradation.</p>
+ <h3>Variable Resistors</h3>
+ <h4><a href="https://patentimages.storage.googleapis.com/7c/58/ff/f1287d6afe5879/US2863972.pdf">Potentiometer</a></h4>
+ <p>A variable resistor with a sliding or rotating contact used for adjustable voltage control.</p>
+ <h4><a href="https://patentimages.storage.googleapis.com/b6/c1/34/deecde4bc9dbc5/US2446417.pdf">Rheostat</a></h4>
+ <p>A high-power variable resistor typically used for controlling current.</p>
+ <h4><a href="https://patentimages.storage.googleapis.com/68/24/87/6c7fa431240f75/US3484734.pdf">Trimmer Potentiometer</a></h4>
+ <p>A small, adjustable resistor designed for fine-tuning circuits.</p>
+ <h3>Specialized Resistors</h3>
+ <h4><a href="https://patentimages.storage.googleapis.com/b4/b9/fd/1bceb754773ae6/US3978443.pdf">Fusible Resistor</a></h4>
+ <p>Acts as both a resistor and a fuse, cutting off current flow if overloaded.</p>
+ <h4><a href="https://patentimages.storage.googleapis.com/c6/b1/aa/a873de801b9935/US4894527.pdf">Light Dependent Resistor</a></h4>
+ <p>Resistance decreases with increased light exposure, commonly used in automatic lighting controls and optical sensors.</p>
+ <h4><a href="https://patentimages.storage.googleapis.com/1f/d1/35/ef8c5768210259/EP1227308B1.pdf">NTC Thermistor</a></h4>
+ <p>Resistance decreases as temperature increases, often used in temperature sensing and compensation circuits.</p>
+ <h4><a href="https://patentimages.storage.googleapis.com/5e/e6/26/c7d482c062f97f/US4981633.pdf">PTC Thermistor</a></h4>
+ <p>Resistance increases as temperature rises, commonly used for overcurrent protection and self-regulating heaters.</p>
+ <h4><a href="https://patentimages.storage.googleapis.com/50/78/2f/1a145bc5ee45fe/US3836483.pdf">Oxide Varistor</a></h4>
+ <p>Used for voltage surge protection by rapidly changing resistance at high voltages.</p>
+ <h4><a href="https://patentimages.storage.googleapis.com/15/ed/fc">Shunt Resistor</a></h4>
+ <p>Designed to measure electrical current by providing a low resistance path for high currents.</p>
+</section>
+ <footer>
+ <a href="https://cthulhuisright.github.io/TechFromScratch/index.html">Back to Main Navigation</a>
+ </footer>
 </body>
 </html>
