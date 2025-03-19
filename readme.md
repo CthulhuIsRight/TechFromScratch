@@ -13,6 +13,8 @@ Each component page includes:
 
 ## Plans
 - Create a source list at the end of each webpage with MLA9 format, and citation numbering/footnotes in-text
+- Add images of components while gathering sources along the way for addition to the source list
+- For text, use footnotes, for images, images, use figure numbers, preferabbly in different sections
 - Update node graph to have dark background, while having the text still be legible
 - Dark mode for component webpages is a must
 - Set up a GitHub Pages site with Jekyll once basic functionality for website is down
